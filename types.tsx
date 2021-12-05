@@ -13,12 +13,13 @@ import { dataI } from "./screens/ListScreen";
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RootStackParamList { }
   }
 }
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  Configuration: undefined;
   Modal: undefined;
   NotFound: undefined;
 
