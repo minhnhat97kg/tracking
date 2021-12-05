@@ -1,19 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements/dist/buttons/Button';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { RootStackScreenProps } from '../types';
 
-export default function ModalScreen() {
+export default function ConfigurationScreen({ navigation }: RootStackScreenProps<any>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Modal</Text>
+      <Button onPress={() => navigation.goBack()} title="Back" />
+      <Text style={styles.title}>Tab Two</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
 }
